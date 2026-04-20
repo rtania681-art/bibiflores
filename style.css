@@ -1983,3 +1983,55 @@ body {
     opacity: 1;
   }
 }
+
+:root {
+  --dark-color: #010113;
+  --flower-main: #ff69b4;
+  --flower-dark: #ff1493;
+  --flower-light: #ffc0cb;
+}
+
+/* PÉTALAS */
+.flower__leaf {
+  background-color: var(--flower-main);
+  background-image: linear-gradient(to top, var(--flower-main), var(--flower-dark));
+}
+
+/* CENTRO DA FLOR */
+.flower__leafs::after {
+  background-color: var(--flower-light);
+}
+
+/* PARTE INTERNA */
+.flower__white-circle {
+  background-color: #ffe4ec;
+}
+
+/* DETALHE INTERNO (linhas do centro) */
+.flower__white-circle::after {
+  background-image:
+    repeating-linear-gradient(135deg, rgba(0,0,0,0.03) 0px, rgba(0,0,0,0.03) 1px, transparent 1px, transparent 12px),
+    linear-gradient(90deg, #ff9ecb, #ff69b4);
+}
+
+/* FOLHAS PEQUENAS (opcional deixar mais rosado) */
+.flower__line__leaf {
+  background-image: linear-gradient(to top, rgba(255, 105, 180, 0.4), var(--flower-dark));
+}
+
+/* LUZES (bolinhas brilhantes) */
+.flower__light {
+  background-color: #ff69b4;
+}
+
+.flower__light:nth-child(odd) {
+  background-color: #ff1493;
+}
+
+/* CORAÇÕES */
+@keyframes love {
+  50% {
+    fill: #ff69b4;
+    opacity: 1;
+  }
+}
